@@ -1,0 +1,29 @@
+-- borrar la bd si existe
+DROP DATABASE IF EXISTS EC3_APOLAYA_CiberClass;
+-- creamos la bd
+CREATE DATABASE EC3_APOLAYA_CiberClass;
+-- activamos la bd
+USE EC3_APOLAYA_CiberClass;
+
+create TABLE tb_carreras(
+idcarrera  int not null primary key,
+descripcion varchar(60)
+);
+
+create table tb_reserva(
+cod_reserva int not null primary key,
+nombre varchar(60),
+apellido varchar(60),
+idcarrera int,
+fchregistro date null,
+constraint fk_carreras foreign key (idcarrera) references tb_carreras(idcarrera)
+);
+
+-- inserts
+insert into tb_carreras values (1, 'Computación e Informática');
+insert into tb_carreras values (2, 'Administración y Sistemas');
+insert into tb_carreras values (3, 'Administración de Redes y Comunicaciones');
+
+insert into tb_reserva values (1, 'Fernando', 'Apolaya', 1, '1927-06-03');
+insert into tb_reserva values (2, 'Yessica', 'Rosales', 3, '1847-08-09');
+insert into tb_reserva values (3, 'Adrian', 'Peña', 2, '1265-05-29');

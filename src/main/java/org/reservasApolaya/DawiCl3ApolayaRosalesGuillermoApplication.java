@@ -8,6 +8,7 @@ public class DawiCl3ApolayaRosalesGuillermoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DawiCl3ApolayaRosalesGuillermoApplication.class, args);
+		System.out.println("Terminó...");
 	}
 
 }
