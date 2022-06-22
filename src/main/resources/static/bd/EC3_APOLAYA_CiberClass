@@ -27,3 +27,8 @@ insert into tb_carreras values (3, 'Administración de Redes y Comunicaciones');
 insert into tb_reserva values (1, 'Fernando', 'Apolaya', 1, '1927-06-03');
 insert into tb_reserva values (2, 'Yessica', 'Rosales', 3, '1847-08-09');
 insert into tb_reserva values (3, 'Adrian', 'Peña', 2, '1265-05-29');
+
+select count(r.cod_reserva) as Total, c.descripcion as Carreras
+from tb_reserva r inner join tb_carreras c
+on r.idcarrera = c.idcarrera
+group by c.descripcion;
